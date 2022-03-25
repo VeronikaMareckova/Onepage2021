@@ -1,0 +1,115 @@
+/******respozivita*****/
+/*text v menu */
+@media only screen and (max-width: 730px){
+    
+    /***** header *****/
+    .header-text {
+        width: 100%;
+        left: 0%;
+        transform: translate(0%,0%);
+    }
+    
+ 
+    .header-text h1 {
+       text-align: center;
+    }   
+}
+
+/*tlačítka když */
+@media only screen and (max-width: 730px){
+    .btn {
+        display: block;
+         text-align: center;
+         margin-left: 10px;
+         margin-right: 10px;
+     }
+     
+     .btn-empty:link,
+     .btn-empty:visited {
+         margin-left: 10px;
+     }
+ 
+}
+/***********nastavení vizitky (pozn. kontakt) pro mobil************/
+@media only screen and (max-width: 500px){
+    .mobile-nadpis{
+        font-size:x-large; /*na dvou řádcích*/
+    }
+    .vizitkaFoto{
+        border-radius: 20%;
+        
+    }
+    .vizitka{ /*zmizí nepříjemný rámeček*/
+    max-width: 500px; /*to my tvoří tu vizitku*/
+    background: none; /*pozadí*/
+    margin: auto; /*na střed*/
+    box-shadow:none; /*stín*/
+    border-radius: none; /*zaoblení rohů*/
+    text-align: center; /*zarovnání na střed*/
+}
+    .mobilh2{
+    display: none;
+}
+}
+/***********mobilní menu************/
+@media only screen and (max-width: 690px){
+    nav ul li{
+        display: none; /*původní menu zmiz*/
+    }
+    .nav-background{
+        display: none; /*původní pozadí zmiz*/
+    }
+    #logo{
+        display: none; /*obrázek s logem skrýt*/
+    }
+    
+    
+/* Upravte styl navigační nabídky - POZADÍ */
+.topnav { /*div který zaobírá celé mobilní menu */
+overflow: hidden;
+background-color: #333;
+position: fixed; /*fixní menu*/
+width: 100%; /*toto patří k fixnímu menu */
+z-index:200;
+}
+
+/* Skrýt odkazy uvnitř navigační nabídky (kromě loga / domovské stránky)*/
+.topnav #myLinks {
+display: none;
+}
+
+/* Odkazy v navigační nabídce stylu STYLOVÁNÍ logo a hamburger */
+.topnav a {
+color: white;
+padding: 2.5%; /*!změna na procenta*/
+text-decoration: none;
+font-size: 17px;
+display: block;
+
+}
+
+/* Vytvořte styl hamburgerové nabídky  HAMBURGER  v pravo*/
+.topnav a.mobile-nav-icon {
+background: #dc4f00;
+display: block;
+position: absolute;
+right: 0;
+top: 0;
+margin: 0%; /*ikonka hamburegu odstanění nepříjemného okraje*/
+}
+
+
+
+    /* Při přejetí myší přidejte šedou barvu pozadí */
+    .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    }
+
+    /* Stylujte aktivní odkaz (nebo domov / logo) zelené pozadí */
+    .active {
+    background-color: #333;
+    color: white;
+    } 
+
+}

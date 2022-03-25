@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*******reusable znovu použitelné věci************/
+
+/*zkráceně*/
+.row{ /*to mi udává že web si drží vše na středu    78. Tvorba webových stránek (HTML a CSS) - Vložení loga do hlavičky*/
+    max-width: 1140px; /*šířka*/
+    margin: 0 auto; /*zarovnání na střed*/
+    padding-left: 1%; /*odsazené okraje*/
+    padding-right: 1%;
+}
+/*h2*/
+h2{
+    text-align: center; /*zarovnání na střed*/
+    font-size: 30px; /*velikost písma*/
+    margin-top: 1%; /*vnější okraj odsazení od zhora*/
+}
+    /*čára h2*/
+    .h2:after
+    {
+        content: "";  /*žádný obsah*/
+        display: block; /*čáru chci mít pod nadpisem*/
+        width: 30%; /*šířka*/
+        border-bottom: 2px solid #908f98; /*podtržení*/
+        margin: 0.5% auto; /*vnější okraj*/
+    }
+
+/*********navigace + logo********/
+    /*pozadí menu*/
+    .nav-background  { 
+        position: fixed; /*fixní výplň*/
+        width: 100%; /*po celé šířce*/
+        height: 7.5%; /*výška pouze kvůli logu*/
+        background-color:#333; /*barva a průhlednost*/
+        z-index: 50; /*vrstva#ee7e3e,#bcbbc1*/
+    }
+
+    /****logo****/
+    #logo img {
+        height: 9%; /*šířka loga*/
+        position: absolute; /*díky tomu že to má tuto vyrvanou pozici s tím můžu hýbat*/
+        border-radius: 10px; /*zaoblení rohů*/
+        top: 0.5%; /*odsadit z hora*/
+        left: 1%;    /*pokud row nefunguje tak tento řádek musím SMAZAT*/
+        
+        position: fixed; /*fixace musí být jak u loga tak u nadpisu extra !!!*/
+        z-index: 200; /*vrchní vrstva*/
+    }
+    /*****navigace******/
+    nav ul {
+            float: right; /*hezky velde loga*/
+            margin-top: 0.5%; /*odsazení od zhora*/
+            position: fixed; /*fixní navigace*/
+            left: 12%; /*nepřekrývá se navigace s logem*/
+            z-index: 100; /*vrchní vrstva*/
+        }
+
+        nav ul li {
+            display: inline-block; /*hezky vedle sebe*/
+            margin-left: 14px; /*odsazení od sebe vzdušnost*/
+        }
+
+        /*odkazy*/
+        nav ul li a:link,
+        nav ul li a:visited {
+            color: #fff;
+            font-size: 25px; /*velikost písma*/
+            text-decoration: none; /*odstraněné podtržení*/
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            background: #dc4f00;
+            border-radius: 10px;
+        }
+    
+     /*Mobile navigation - menu*/ 
+    .mobile-nav-icon { /*ikonka*/
+        float: right; /*zarovnat do prava ikonku*/
+        margin-top: 1%; /*odsazení ikonky od zhora*/
+        margin-right:2% ;/*odsazení ikonky z prava*/
+        display: none; /*skrýt ikonku hamburgru*/
+    }
+        /*mobilní menu*/
+        .active{
+            display: none; /*skrýt logo určené pro mobil*/
+        }
+        #myLinks{
+            display: none; /*skrýt hypertextové odkazy určené pro mobil */
+        }
+
+
+
+/******pozadí obrázku******/
+header{     /*67,68 videa*/
+    background: 
+        linear-gradient( rgba(0,0,0,0.5),rgba(0,0,0,0.5)), /*ztemnění obrázku     linear-gradient tj. přechod dvou barev (barva průhlednost)     70. Tvorba webových stránek (HTML a CSS) - Linear gradient, co to je a jak to použít*/
+        url("img/pizzaSyr.jpg"); /*pozadí nastavíme jako obrázek*/
+    background-size: cover; /*výháhne to hlaví z obrázku    background-size tj. Pozadí-velikost:    pozn.68 Tvorba webových stránek (HTML a CSS) - Box sizing a cover u obrázku*/
+    height: 100vh; /*100% výška vjůport     pozn.67. Tvorba webových stránek (HTML a CSS) - Vložení obrázku jako background a viewport*/
+}
+/******nadpis_2tlacitka******/
+
+    /*nadpis_2tlacitka - pozicování*/
+    .header-text{      /*71. Tvorba webových stránek (HTML a CSS) - Text doprostřed hlavičky, transform a translate*/
+        position: absolute; /*vyrvali jsme text*/
+        top: 50%; /*od zhora se posuň o 50%*/
+        left:40%; /*z leva se posuň o 30%*/
+        transform: translate(-50%,-50%); /*věta je přesně "rozpůlena" na středu. (x,y) souřadnice*/
+        }
+
+        /*nadpis*/
+        .header-text h1{    /*72. Tvorba webových stránek (HTML a CSS) - Upravíme si nadpis h1 v hlavičce*/
+            color: #fff;
+            font-size: 30px; /*velikost písma*/
+            text-transform: uppercase;/*velká písmena*/
+            letter-spacing: 1.5%;/*mezery mezi písmeny*/
+            word-spacing: 1%;/*mezery mezi slovy*/
+        }
+
+        /*2 tlačítka*/
+        .btn{
+            display: inline-block; /*zobraz se jak: (inline, inline-block, block 36 video) protože je <a> je řádkový element a nemá žádnou výšu a šířku */
+            margin-top: 10px; /*vnější okraj pozn. díky display: inline-block funguje margin-top*/
+            padding: 5px 10px; /*vnitřní okraj nahoře_dole, vlevo_vpravo*/
+            color: #fff;
+            text-decoration: none; /*žádné podtržení*/
+            font-size: 20px; /*velikost písma*/
+            border: 1px solid #dc4f00; /*pozadí*/
+            border-radius: 10px; /*zakulacení rohů*/        
+            letter-spacing: 1px;/*mezery mezi písmeny*/
+            }
+            /*tlačítko 1 základní nastavení*/
+            .btn-full:link,
+            .btn-full:visited {
+                background: #dc4f00;
+            }
+                /*tlačítko 1 po kliknutí*/
+                
+                .btn-full:hover,
+                .btn-full:active {
+                    transition: background 0.5s; /*jemený přechod  udělěj mi: přechod čeho pozadí jak dlouho 1.5vteřiny*/
+                    background: #792d02;
+                    border: 1px solid #792d02;
+                }
+            
+
+            /*tlačítko 2 základní nastavení*/
+            .btn-empty:link,
+            .btn-empty:visited {
+                border: 2px solid #a93d00;
+                margin-left: 1%; /*vnější okraj levý u druhého tlačítka */
+            } 
+                
+                /*tlačítko 2 po kliknutí*/
+                    .btn-empty:hover,
+                    .btn-empty:active {
+                        transition: background 0.5s; /*jemený přechod*/
+                        background: #a93d00;
+                        border: 2px solid #a93d00;
+                    }
+            
+/********* STŘED (mein) WEBU ***********/
+    /******2 pizzy ze sekce 1***/         
+        /*rozlození obrázku 100% na celou jejich plochu*/ /*zaoblení rohů*/ /*stín obrázků*/
+        .dvěpizzy img { width: 100%;
+            border-radius: 5%;
+            box-shadow: 5px 8px 10px #000000}
+    
+        /******obrázek č. 3 ze sekce 2***/
+            .pizza3avýhody img { width: 100%;
+                border-radius: 5%;
+                box-shadow: 5px 8px 10px #000000}
+        /***výhody ze sekce 2***/
+            /**celý odstavec**/     
+                /*úprava m. vnějšího okraje b. pouze spodní*/
+            .výhody{margin-bottom: 2%;}
+    
+            /**úprava čísel**/ 
+                /*šířka W. a výška H. + border tj. čára =čtverec*/ /*zarování na střed*/ /*b-r:50% => vznik koločko*/ /*p. 12px => zarování na střed*/ /*f.plujeme např. s textem !!!musíme vždy f. zastavit*/
+            .výhody div{width: 50px;
+                height: 50px;border: 2px solid #000000;
+                text-align: center;
+                border-radius: 50%;
+                padding: 12px;
+                float: left;}
+    
+    
+            /**úprava textu odstavečků**/
+                /*m-l odsazení od vnějšího okraje*/
+            .výhody p {margin-left: 10%;}
+    
+        /******sekce 3 - REFERENCE***/
+            /**foto do pozadí**/
+                /*gradiend 2 přelínající barvy tj. začernění */ /*obrázek v pozadí */ /*Obrázek více na střed => cover *//*100% = 100vw tj. obrázek je po celé šířce */  
+            .sekce3 {background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+            url(img/pizzaSyr.jpg);
+            background-size: cover;
+            width: 100vw;
+            background-attachment: fixed;} /*obrázek se nehýbe*/
+    
+            /**sekce 3 h2 nadpis**/
+            .reference h2{color: #ffffff;}
+            
+            /**sekce 3 CELEK reference**/
+            .reference-celek p{color: #ffffff;}
+
+    
+            /**sekce 3 TEXT reference**/
+                /*kurzíva*/ /*doprostřed => vyušení do bloku*/
+            .reference-text p {font-style: italic;
+                text-align: left;}
+    
+            /**sekce 3 (Foto + Jméno) ZAROVNÁNÍ reference**/
+            .reference-obrázek-a-jméno {margin-top: 3%;}
+                /**sekce 3 FOTO tj. obrázek reference**/
+                .reference-obrázek-a-jméno img {width: 15%; /*šířka 20%*/
+                     border-radius: 50%; /*kulatý obrázek tj. fotka*/
+                     float: left;}  /*floutuju !!musím u ukončit v html fotky!!!*/
+    
+                /**sekce 3 JMÉNO reference**/
+                .reference-obrázek-a-jméno p {margin-left: 20%; /*vnější okraj => "odsazení" */
+                     font-size: 20px; /*velikost písma*/
+                      padding-top: 4%;} /*vnitření okraj top = odzhora =>"zarovnání na střed" */
+        /******sekce 4 - GALERIE***/
+             .fotogalerie li {
+                list-style-type: none;
+                overflow: hidden; /*fotka se zvětšila fukncí "transform scale 1.15" a co PŘESAHUJE SKRÝT*/
+               height: 300px;} 
+            /**obrázky fotogalerie**/
+            .fotogalerie img { width: 100%; /*rozlození obrázku 100% na celou jejich plochu*/ 
+                /*opacity: 50%; //průhlednost obrázku pozn. když budu chtít jinou barvu tak musím dát pozadí např. <li> ale ne obrázku video 89*/
+                transform: scale(1.15) ; /*zvětšit např. obrázek o 1.15 = 115%*/
+                height: 300px;} 
+                .fotogalerie img:hover{
+                    transition: transform 0.5s, opacity 0.5s; /*transiton = co má vzít např. t. nebo o. a jak rychlý má být přechod např. 0.5s*/
+                    transform: scale(1);
+                    opacity: 1;
+                } /*obrázek vrať se na původní pozici 1 tj. 100% pozn. v základu máme nastaveno např. na 115%*/ /*100% průhlednost např. obrázku*/
+            
+ 
+
+    
+    /********* PATIČKA WEBU ***********/
+    .patička-webu {background-color: #333;color: white;}  /*pozadí;barva*/
+        .práce-s-textem  {text-align: center;
+            margin-top: 0.5%;
+            padding-top: 0%;
+            font-size: small;} /*zarování na střed;vnější okraj;vnitřní okraj*/
+            /*.patička-odkazy {} připravena div třída*/
+                    .patička-odkazy p{display: inline; margin: 0.5% ;} /*text vedle sebe;vnější okraj*/
+                        .patička-odkazy p a  {color: #fff;} /*hyper.textový odkaz brva modrá*/
+    
+                .patička-výrobce{margin-top: 0.5%;}
+        
+     /********** Stop floating **********/
+    .clearfix {zoom: 1}
+    .clearfix:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
